@@ -12,7 +12,6 @@ import {
   YAxis,
   CartesianGrid,
   Line,
-  Tooltip,
 } from "recharts";
 
 import colors from "tailwindcss/colors";
@@ -54,7 +53,15 @@ export function RevenueChart() {
                 })
               }
             />
-            <Line type="linear" strokeWidth={2} dataKey="revenue" stroke={colors.violet['500']}></Line>
+
+            <Line
+              type="linear"
+              strokeWidth={2}
+              dataKey="revenue"
+              stroke={colors.violet["500"]}
+            ></Line>
+
+            <CartesianGrid vertical={false} className="stroke-muted"/>
           </LineChart>
         </ResponsiveContainer>
       </CardContent>
