@@ -1,4 +1,4 @@
-import { getOrderDetails } from "@/api/get-order-details";
+import { getOrderDetails } from "@/api/orders/get-order-details";
 import { OrderStatus } from "@/components/order-status";
 import {
   DialogContent,

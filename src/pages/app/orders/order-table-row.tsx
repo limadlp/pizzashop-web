@@ -8,11 +8,11 @@ import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { useState } from "react";
 import { useMutation, useQueryClient } from "react-query";
-import { cancelOrder } from "@/api/cancel-order";
-import { GetOrdersResponse } from "@/api/get-orders";
-import { approveOrder } from "@/api/approve-order";
-import { deliverOrder } from "@/api/deliver-order";
-import { dispatchOrder } from "@/api/dispatch-order";
+import { cancelOrder } from "@/api/orders/cancel-order";
+import { GetOrdersResponse } from "@/api/orders/get-orders";
+import { approveOrder } from "@/api/orders/approve-order";
+import { deliverOrder } from "@/api/orders/deliver-order";
+import { dispatchOrder } from "@/api/orders/dispatch-order";
 
 export interface OrderTableRowProps {
   order: {

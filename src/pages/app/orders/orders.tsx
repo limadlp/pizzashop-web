@@ -11,7 +11,7 @@ import { OrderTableRow } from "./order-table-row";
 import { OrderTableFilters } from "./order-table-filters";
 import { Pagination } from "@/components/pagination";
 import { useQuery } from "react-query";
-import { getOrders } from "@/api/get-orders";
+import { getOrders } from "@/api/orders/get-orders";
 import { useSearchParams } from "react-router-dom";
 import { z } from "zod";
 
