@@ -5,13 +5,13 @@ import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 
 import colors from "tailwindcss/colors";
 
-const data = [
-  { product: "Pepperoni", amount: 40 },
-  { product: "Mussarela", amount: 30 },
-  { product: "Marguerita", amount: 50 },
-  { product: "4 Queijos", amount: 16 },
-  { product: "Calabresa", amount: 26 },
-];
+// const data = [
+//   { product: "Pepperoni", amount: 40 },
+//   { product: "Mussarela", amount: 30 },
+//   { product: "Marguerita", amount: 50 },
+//   { product: "4 Queijos", amount: 16 },
+//   { product: "Calabresa", amount: 26 },
+// ];
 
 const COLORS = [
   colors.sky[500],
