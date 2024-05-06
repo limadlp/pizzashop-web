@@ -1,5 +1,6 @@
 //import { useState } from "react";
 import { getPopularProducts } from "@/api/dashboard/get-popular-products";
+import { Loader2 } from "lucide-react";
 import { useQuery } from "react-query";
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 
@@ -30,7 +31,7 @@ export function ProductsPieChart() {
 
   return (
     <div>
-      {popularProducts && (
+      {popularProducts ? (
         <ResponsiveContainer width="100%" height={240}>
           <PieChart style={{ fontSize: 12 }}>
             <Pie
@@ -66,7 +67,9 @@ export function ProductsPieChart() {
                     dominantBaseline="central"
                   >
                     {popularProducts[index].product.length > 12
-                      ? popularProducts[index].product.substring(0, 12).concat("...")
+                      ? popularProducts[index].product
+                          .substring(0, 12)
+                          .concat("...")
                       : popularProducts[index].product}{" "}
                     ({value})
                   </text>
@@ -87,6 +90,10 @@ export function ProductsPieChart() {
             </Pie>
           </PieChart>
         </ResponsiveContainer>
+      ) : (
+        <div className="flex h-[240px] w-full items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+        </div>
       )}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
         {/* {percent} */}

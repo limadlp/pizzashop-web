@@ -22,6 +22,7 @@ import colors from "tailwindcss/colors";
 import {DateRange} from "react-day-picker";
 import { useMemo, useState } from "react";
 import {subDays} from "date-fns";
+import { Loader2 } from "lucide-react";
 
 export function RevenueChart() {
   const [dateRange, setDateRange] = useState<DateRange | undefined>({
@@ -63,7 +64,7 @@ export function RevenueChart() {
 
       </CardHeader>
       <CardContent>
-        {chartData && (
+        {chartData ? (
           <ResponsiveContainer width="100%" height={240}>
             <LineChart data={chartData} style={{ fontSize: 12 }}>
               <XAxis dataKey="date" tickLine={false} axisLine={false} dy={16} />
@@ -90,6 +91,10 @@ export function RevenueChart() {
               <CartesianGrid vertical={false} className="stroke-muted" />
             </LineChart>
           </ResponsiveContainer>
+        ): (
+          <div className="flex h-[240px] w-full items-center justify-center">
+            <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+          </div>
         )}
       </CardContent>
     </Card>
